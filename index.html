@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWF Katingan Climate Reports</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wwf-green': '#00853f',
+                        'wwf-dark': '#005f2d',
+                        'wwf-light': '#e6f3eb'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .report-card {
+            transition: all 0.3s ease;
+        }
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 133, 63, 0.2), 0 8px 10px -6px rgba(0, 133, 63, 0.1);
+        }
+        .report-card:hover .icon-container {
+            background-color: #00853f;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans text-gray-800 selection:bg-wwf-light selection:text-wwf-dark">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-wwf-light sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-wwf-green rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900 leading-tight">Katingan Climate Risk</h1>
+                    <p class="text-sm text-wwf-green font-medium">WWF Indonesia Project Reports</p>
+                </div>
+            </div>
+            <a href="https://github.com/" target="_blank" class="text-gray-500 hover:text-wwf-green transition-colors flex items-center gap-2 text-sm font-medium">
+                <i class="fa-brands fa-github text-lg"></i> View Source
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <div class="mb-10 text-center md:text-left">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Interactive Report Library</h2>
+            <p class="text-lg text-gray-600 max-w-3xl">Explore the comprehensive climate vulnerability and risk assessment documents for the Katingan region and its surrounding villages. Click on any report below to open the interactive 3D flipbook.</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            
+            <!-- Card 1 -->
+            <a href="kajian kerentanan dan risiko iklim katingan.html" class="report-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col sm:flex-row group">
+                <div class="icon-container w-full sm:w-48 bg-wwf-light text-wwf-green flex flex-col items-center justify-center p-8 transition-colors duration-300 border-r border-gray-100">
+                    <i class="fa-solid fa-book-open text-5xl mb-3"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider opacity-80">Overview</span>
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-1">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-wwf-green transition-colors">Kajian Kerentanan dan Risiko Iklim Katingan</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-3">The general overview document assessing climate vulnerability and disaster risks across the broader Katingan landscape.</p>
+                    </div>
+                    <div class="flex items-center text-wwf-green font-semibold text-sm">
+                        <span>Read Flipbook</span>
+                        <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="kajian kerentanan dan risiko iklim desa karuing.html" class="report-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col sm:flex-row group">
+                <div class="icon-container w-full sm:w-48 bg-wwf-light text-wwf-green flex flex-col items-center justify-center p-8 transition-colors duration-300 border-r border-gray-100">
+                    <i class="fa-solid fa-map-location-dot text-5xl mb-3"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider opacity-80">Desa Karuing</span>
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-1">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-wwf-green transition-colors">Kajian Kerentanan dan Risiko Iklim Desa Karuing</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-3">Detailed climate and disaster risk assessment specific to the village of Karuing.</p>
+                    </div>
+                    <div class="flex items-center text-wwf-green font-semibold text-sm">
+                        <span>Read Flipbook</span>
+                        <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="Kajian Kerentanan dan Risiko Iklim Desa Tumbang Habangoi.html" class="report-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col sm:flex-row group">
+                <div class="icon-container w-full sm:w-48 bg-wwf-light text-wwf-green flex flex-col items-center justify-center p-8 transition-colors duration-300 border-r border-gray-100">
+                    <i class="fa-solid fa-tree text-5xl mb-3"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider opacity-80">Tumbang Habangoi</span>
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-1">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-wwf-green transition-colors">Kajian Kerentanan dan Risiko Iklim Desa Tumbang Habangoi</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-3">Participatory climate-related disaster risk assessment for the village of Tumbang Habangoi.</p>
+                    </div>
+                    <div class="flex items-center text-wwf-green font-semibold text-sm">
+                        <span>Read Flipbook</span>
+                        <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="Kajian Kerentanan dan Risiko Iklim Desa Tumbang Mangara dan Kawei.html" class="report-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col sm:flex-row group">
+                <div class="icon-container w-full sm:w-48 bg-wwf-light text-wwf-green flex flex-col items-center justify-center p-8 transition-colors duration-300 border-r border-gray-100">
+                    <i class="fa-solid fa-water text-5xl mb-3"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider opacity-80">Mangara & Kawei</span>
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-1">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-wwf-green transition-colors">Kajian Kerentanan dan Risiko Iklim Desa Tumbang Mangara dan Kawei</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-3">Comprehensive climate vulnerability document focusing on the villages of Tumbang Mangara and Kawei.</p>
+                    </div>
+                    <div class="flex items-center text-wwf-green font-semibold text-sm">
+                        <span>Read Flipbook</span>
+                        <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center text-sm">
+            <p>&copy; 2026 WWF Indonesia. All rights reserved.</p>
+            <p class="mt-2 text-gray-500">Kajian Kerentanan dan Risiko Iklim - Katingan Project</p>
+        </div>
+    </footer>
+
+</body>
+</html>
