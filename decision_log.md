@@ -20,3 +20,8 @@
 **Date:** 2026-09-12
 **Decision:** Prepend 'docs/' to PDF paths in the flipbook HTML files.
 **Rationale:** The HTML files were moved to the project root, but the paths were still relative to the root, causing a 404 error when accessing the PDFs located in the 'docs' folder on GitHub Pages.
+
+## Decision 8: Performance Optimization (PDF Compression)
+**Date:** 2026-09-12
+**Decision:** Replace pypdf with PyMuPDF and Pillow in compress_pdfs.py to enable aggressive image downsampling.
+**Rationale:** The 90MB PDFs were causing the flipbook viewer to hang on 'Loading Report...'. The new script shrinks the largest PDFs by ~75% (e.g., 86MB down to 17MB) by downsampling internal images to a max width of 1500px, drastically improving load times.
