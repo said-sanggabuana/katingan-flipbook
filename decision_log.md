@@ -30,3 +30,8 @@
 **Date:** 2026-09-12
 **Decision:** Fixed three fatal JavaScript bugs in build_flipbooks.py that were permanently halting execution.
 **Rationale:** The user reported the flipbooks still wouldn't load. A headless browser test revealed the script was throwing a SyntaxError due to a missing closing parenthesis on the DOMContentLoaded event listener, a ReferenceError due to pdfDoc being out of scope for renderPage, and a call to a non-existent initFlipbook function. Fixing these allows the flipbook UI to successfully initialize and render.
+
+## Decision 10: Fix UI Layout Overlap
+**Date:** 2026-09-12
+**Decision:** Changed .flipbook-viewport CSS from a fixed calc() height to 'flex: 1' and 'min-height: 0'.
+**Rationale:** The page-flip library was stretching the flipbook canvas based on a rigid height calculation, causing the top of the PDF to render underneath the sticky navigation header and control bar. Using a flex-grow approach ensures the container dynamically bounds itself strictly to the available space below the controls, fixing the overlap.

@@ -37,7 +37,8 @@ TEMPLATE = """<!DOCTYPE html>
         }
         .flipbook-viewport {
             width: 100%;
-            height: calc(100vh - 180px);
+            flex: 1;
+            min-height: 0;
             display: flex;
             justify-content: center;
             align-items: center;
