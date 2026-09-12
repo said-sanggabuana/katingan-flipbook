@@ -98,7 +98,7 @@ TEMPLATE = """<!DOCTYPE html>
             </div>
         </div>
         <div class="flex items-center gap-3">
-            <a href="{{PDF_FILENAME}}" download class="p-2 sm:px-4 sm:py-2 rounded-lg bg-gray-50 hover:bg-gray-100 text-wwf-green border border-gray-200 transition-all text-xs sm:text-sm font-medium flex items-center gap-2 shadow-sm">
+            <a href="docs/{{PDF_FILENAME}}" download class="p-2 sm:px-4 sm:py-2 rounded-lg bg-gray-50 hover:bg-gray-100 text-wwf-green border border-gray-200 transition-all text-xs sm:text-sm font-medium flex items-center gap-2 shadow-sm">
                 <i class="fa-solid fa-download"></i>
                 <span class="hidden sm:inline">Download PDF</span>
             </a>
@@ -145,7 +145,7 @@ TEMPLATE = """<!DOCTYPE html>
                 <button id="btn-fullscreen" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white hover:bg-gray-50 text-wwf-green border border-gray-200 shadow-md flex items-center justify-center transition-all" title="Toggle Fullscreen">
                     <i class="fa-solid fa-expand"></i>
                 </button>
-                <a href="docs/{pdf_file}" download class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white hover:bg-gray-50 text-wwf-green border border-gray-200 shadow-md flex items-center justify-center transition-all" title="Download Original PDF">
+                <a href="docs/{{PDF_FILENAME}}" download class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white hover:bg-gray-50 text-wwf-green border border-gray-200 shadow-md flex items-center justify-center transition-all" title="Download Original PDF">
                     <i class="fa-solid fa-download"></i>
                 </a>
             </div>
@@ -167,7 +167,7 @@ TEMPLATE = """<!DOCTYPE html>
             const pdfjsLib = window['pdfjs-dist/build/pdf'];
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-            const pdfUrl = '{{PDF_FILENAME}}';
+            const pdfUrl = 'docs/{{PDF_FILENAME}}';
             const flipbookEl = document.getElementById('flipbook');
             let pdfDoc = null;
             let pageFlip = null;
