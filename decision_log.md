@@ -25,3 +25,8 @@
 **Date:** 2026-09-12
 **Decision:** Replace pypdf with PyMuPDF and Pillow in compress_pdfs.py to enable aggressive image downsampling.
 **Rationale:** The 90MB PDFs were causing the flipbook viewer to hang on 'Loading Report...'. The new script shrinks the largest PDFs by ~75% (e.g., 86MB down to 17MB) by downsampling internal images to a max width of 1500px, drastically improving load times.
+
+## Decision 9: Fix Fatal JavaScript Syntax Errors
+**Date:** 2026-09-12
+**Decision:** Fixed three fatal JavaScript bugs in build_flipbooks.py that were permanently halting execution.
+**Rationale:** The user reported the flipbooks still wouldn't load. A headless browser test revealed the script was throwing a SyntaxError due to a missing closing parenthesis on the DOMContentLoaded event listener, a ReferenceError due to pdfDoc being out of scope for renderPage, and a call to a non-existent initFlipbook function. Fixing these allows the flipbook UI to successfully initialize and render.

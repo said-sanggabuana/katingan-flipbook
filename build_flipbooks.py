@@ -163,14 +163,14 @@ TEMPLATE = """<!DOCTYPE html>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
     <script>
+        let pdfDoc = null;
+        let pageFlip = null;
         document.addEventListener('DOMContentLoaded', async () => {
             const pdfjsLib = window['pdfjs-dist/build/pdf'];
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
             const pdfUrl = 'docs/{{PDF_FILENAME}}';
             const flipbookEl = document.getElementById('flipbook');
-            let pdfDoc = null;
-            let pageFlip = null;
 
             // CORS Warning Check
             if (window.location.protocol === 'file:') {
@@ -309,7 +309,7 @@ TEMPLATE = """<!DOCTYPE html>
                 console.error("Error loading PDF", error);
                 document.getElementById('loading').innerHTML = `<span class="text-red-500 font-bold"><i class="fa-solid fa-circle-exclamation"></i> Error loading PDF</span><br/><span class="text-sm text-gray-600">${error.message}</span>`;
             }
-        }
+        });
 
         const renderedPages = new Set();
         async function renderPage(pageNum) {
@@ -341,9 +341,6 @@ TEMPLATE = """<!DOCTYPE html>
             
             await page.render(renderContext).promise;
         }
-
-        // Add a small delay to let UI render before heavy PDF parsing
-        setTimeout(initFlipbook, 100);
     </script>
 </body>
 </html>
